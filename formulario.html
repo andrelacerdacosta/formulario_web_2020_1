@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulário</title> <!-- cabeçalho titulo -->
+		<meta charset="utf-8"> <!-- para codificar o padrão de acentuação UTF-8 -->
+		<link rel="stylesheet" type="text/css" href="./css/estilo.css">
+
+		<script type="text/javascript" src="./js/script.js"></script>
+		<!-- ============================ Define o css e a cor dos elementos em geral ===================================== -->
+		<!-- Define a cor como prioridade, porem não é bom utilizar esse metodo color: red!important; -->
+
+
+		<!-- px = pixel-->
+		<!-- definindo o espaco de margem:  
+			div{
+				border: 1px solid;
+				margin-bottom: : 10px;
+			}
+
+			OU
+			
+			div{
+				border: 1px solid;
+				margin: : 10px 0px 0px 0px;
+			}
+			
+			DEFINE UMA BORDA EXTERNA E COLOCA BACKGROUND
+
+			form{
+				border: 1px solid red;
+				padding: 100px;
+				background: black;
+			}
+		-->
+		<!--  Definindo cores e fontes ____________________________________	
+		<style type="text/css">
+			h1{
+				color: red;
+				font-size: 18px;
+			}
+			div h1{
+				color:blue;
+				font-size: 20px;
+			}
+			form label{
+				color:green;
+			}
+			div{
+				border: 1px solid;
+				margin: 10px 0px 0px 0px;
+				padding: 10px;
+			}
+			#div-usuario{
+				border: 1px solid orange;
+			}
+			.div-campos{
+				border: 1px solid red;
+			}
+			form{
+				border: 1px solid red;
+				padding: 100px;
+				background: yellow;
+			}
+		</style>-->
+
+	</head>
+	<body onload="message('Deseja receber notificações?');">
+		<label>Mulheres a procura de um homem!!</label>>
+		<a href="#" onclick="message('Mulheres solteiras na sua região');">link</a>
+
+		<h1 onmouseover="message('Usamos cookies para melhorar sua experiencia');">Formulário</h1> <!-- Muda a cor do elemento com prioridade <h1 style="color: blue;">Formulário2</h1>  -->
+		<form method="POST" action="/postar">
+			<div id="div-usuario">
+				<label>Usuário:</label>
+				<input type="text" readonly name="usuario" value="teste">
+			</div>
+
+			<div class="div-campos">
+				<label>Nome:</label>
+				<input type="text" name="nome" placeholder="Digite seu nome">
+			</div>
+
+			<div>
+				<label>CPF:</label>
+				<input type="text" name="cpf" placeholder="Digite seu CPF">
+			</div>
+
+			<div>
+				<label>Data de Nascimento:</label>
+				<input type="date" name="data_nascimento">
+			</div>
+
+			<div>
+				<label>Numero da Residencia:</label>
+				<input type="number" name="numero_residencia">
+			</div>
+
+			<div>
+				<label>E-Mail:</label>
+				<input type="email" name="email" placeholder="Digite seu E-mail">
+			</div>
+
+			<div>
+				<label>Sexo:</label>
+				<input type="radio" name="sexo" value="M"> Masculino
+				<input type="radio" name="sexo" value="F"> Feminino
+			</div>
+
+			<div>
+				<label>Interesses:</label>
+				<input type="checkbox" name="interesses[]" value="Futebol"> Futebol
+				<input type="checkbox" name="interesses[]" value="Viagem"> Viagem
+				<input checked type="checkbox" name="interesses[]" value="Games"> Games
+			</div>
+
+			<div>
+				<label>Cidade:</label>
+				<select name="cidade">
+					<option>----</option>
+					<option value="1">
+						Lavras
+					</option>
+					<option selected value="2">
+						Três Corações
+					</option>
+				</select>
+			</div>
+
+			<textarea name="texto">texto da caixa</textarea> <!--<textarea rows="10" cols="30" name="texto"> -->
+
+			<div>
+				<label>Senha:</label>
+				<input type="password" value="sadada" name="senha">
+			</div>
+
+			<div>
+				<label>Arquivo:</label>
+				<input type="file" name="arquivo">
+			</div>
+			<!-- ================================   Envia as informações ================================-->
+			<div>
+				<input type="submit" name="enviar" value="Enviar">
+
+				<input type="reset" name="resetar" value="Resetar">
+			</div>
+
+			<input type="hidden" name="id" value="1">
+			
+		</form>
+
+<!-- <script type="text/javascript">
+	alert("Teste javascript!!!")
+</script> -->
+
+	</body>
+</html>

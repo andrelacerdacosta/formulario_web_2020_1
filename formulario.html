@@ -5,7 +5,7 @@
 		<meta charset="utf-8"> <!-- para codificar o padrão de acentuação UTF-8 -->
 		<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 
-		<script type="text/javascript" src="./js/script.js"></script>
+		<script type="text/javascript" src="./js/tabela.js"></script>
 		<!-- ============================ Define o css e a cor dos elementos em geral ===================================== -->
 		<!-- Define a cor como prioridade, porem não é bom utilizar esse metodo color: red!important; -->
 
@@ -62,27 +62,36 @@
 				background: yellow;
 			}
 		</style>-->
+<style>
+	table, th, td {
+  			border: 2px solid white;
+		}
+</style>
 
 	</head>
-	<body onload="message('Deseja receber notificações?');">
-		<label>Mulheres a procura de um homem!!</label>>
+	<!--<body onload="message('Deseja receber notificações?');"> -->
+	<body>
+		<label>Mulheres a procura de um homem!!</label>
+		<!-- Link 
 		<a href="#" onclick="message('Mulheres solteiras na sua região');">link</a>
+		-->
+		<h1>Formulário</h1> <!-- Muda a cor do elemento com prioridade <h1 style="color: blue;">Formulário2</h1>  -->
+		<form onsubmit="exibirTabela(); return false;">
 
-		<h1 onmouseover="message('Usamos cookies para melhorar sua experiencia');">Formulário</h1> <!-- Muda a cor do elemento com prioridade <h1 style="color: blue;">Formulário2</h1>  -->
-		<form method="POST" action="/postar">
+
 			<div id="div-usuario">
 				<label>Usuário:</label>
-				<input type="text" readonly name="usuario" value="teste">
+				<input type="text" readonly name="usuario" value="Aluno">
 			</div>
 
 			<div class="div-campos">
 				<label>Nome:</label>
-				<input type="text" name="nome" placeholder="Digite seu nome">
+				<input type="text" name="nome" id="nome" placeholder="Digite seu nome">
 			</div>
 
 			<div>
 				<label>CPF:</label>
-				<input type="text" name="cpf" placeholder="Digite seu CPF">
+				<input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF">
 			</div>
 
 			<div>
@@ -97,7 +106,7 @@
 
 			<div>
 				<label>E-Mail:</label>
-				<input type="email" name="email" placeholder="Digite seu E-mail">
+				<input type="email" name="email" id="email" placeholder="Digite seu E-mail">
 			</div>
 
 			<div>
@@ -115,7 +124,7 @@
 
 			<div>
 				<label>Cidade:</label>
-				<select name="cidade">
+				<select name="cidade" id="cidade">
 					<option>----</option>
 					<option value="1">
 						Lavras
@@ -147,6 +156,14 @@
 			<input type="hidden" name="id" value="1">
 			
 		</form>
+		<table id="tabela">
+		<tr>
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>E-mail</th>
+			<th>Cidade</th>
+		</tr>
+	</table>
 
 <!-- <script type="text/javascript">
 	alert("Teste javascript!!!")
